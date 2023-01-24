@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <script>
+
+        /* let obj = {
+            name: 'Alex',
+            age: 20,
+        }
+        console.log(obj)
+
+        let person = Object.create({}, {
+            name: {
+                value: 'Peter', 
+                writable: true, // разрешение-запрет на изменение знач эл
+                configurable: true, // разрешение-запрет на удаление знач эл
+                enumerable: true, // видно при переборе for
+            },
+            age: {
+                value: 21,
+                writable: true,
+                configurable: true,
+            }
+        })
+        console.log(person)
+
+        for(let key in obj){
+            console.log(key, obj[key]) //вывод ключа и значения
+        }
+        for(let key in person){
+            Object.defineProperty(person, key, {
+                value: 'Peter',
+                writable: true,
+                configurable: true,
+            })
+        }
+        for(let key in person){
+            console.log(key, person[key])
+        } */
+
+        /* function Person(namePar, agePar) { // с большой буквы!
+            this.name = namePar; // контекст вызова
+            this.age = agePar;
+            this.human = 'human';
+            let gender = 'male';
+        }
+
+        let person1 = new Person('Sam', 21)
+        console.log(person1)
+
+        let arr = [];
+        for (let i = 1; i < 100; i++){
+            arr.push(new Person('Jack', 25))
+        }
+        console.log(arr) */
+
+        //1.
+
+        function Block(width, height, color){
+
+            this.el = document.createElement('div');
+            this.width = `${width}px`;
+            this.height = `${height}px`;
+            this.bgcolor = color;
+            this.el.style.width = this.width;
+            this.el.style.height = this.height;
+            this.el.style.backgroundColor = this.bgcolor;
+
+            this.setWidth = function(x){
+                this.width = `${x}px`;
+                this.el.style.width = this.width;
+            }
+
+            document.body.append(this.el);
+        }
+
+        let block1 = new Block(200, 200, 'red');
+        console.log(block1);
+        /* block1.setWidth(500); */
+
+
+        
+    </script>
+</body>
+</html>
